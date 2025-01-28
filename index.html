@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>ACL Operator</title>
+
+    <style>
+        body {
+            font-family: sans-serif;
+            background-color: #e3f2fd;
+            color: #1a73e8;
+            text-align: center;
+            padding: 10px;
+        }
+
+        button {
+            background-color: #90caf9;
+            color: #0d47a1;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 12px;
+            font-size: 14px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #64b5f6;
+        }
+
+        .answer {
+            font-weight: bold;
+        }
+    </style>
+    
+</head>
+<body>
+
+    <h1>If a = 20 and b = 5, compute for the following</h1>
+<p>_______________________________________________________________________________________________________________________</p>
+<br>
+
+    <h2>Arithmetic Operator</h2>
+    <p>a. Exponent: 20 ** 2?</p>
+    <button onclick="showAnswer('exponent')">Show Answer</button>
+    <p id="exponent" class="answer"></p>
+    <p>b. Modulus: 10 % 5?</p>
+    <button onclick="showAnswer('modulus')">Show Answer</button>
+    <p id="modulus" class="answer"></p>
+<p>_________________________________________________________________</p>
+    <h2>Comparison Operator</h2>
+    <p>a. Is a greater than b (20 > 5)?</p>
+    <button onclick="showAnswer('greaterThan')">Show Answer</button>
+    <p id="greaterThan" class="answer"></p>
+
+    <p>b. Is a equal to b (20 == 20)?</p>
+    <button onclick="showAnswer('equalTo')">Show Answer</button>
+    <p id="equalTo" class="answer"></p>
+<p>_________________________________________________________________</p>
+    <h2>Logical Operator</h2>
+    <p>a. (a <= b && a >= b)?</p>
+    <button onclick="showAnswer('logicalAnd')">Show Answer</button>
+    <p id="logicalAnd" class="answer"></p>
+
+    <p>b. (a != b || a === b)?</p>
+    <button onclick="showAnswer('logicalOr')">Show Answer</button>
+    <p id="logicalOr" class="answer"></p>
+
+    <script>
+        function showAnswer(id) {
+            let answer;
+
+            if (id === 'exponent') {
+                answer = 3200000
+            } else if (id === 'modulus') {
+                answer = 0
+            } else if (id === 'greaterThan') {
+                answer = 20 > 5
+            } else if (id === 'equalTo') {
+                answer = 20 == 20
+            } else if (id === 'logicalAnd') {
+                answer = (20 <= 5 && 20 >= 5)
+            } else if (id === 'logicalOr') {
+                answer = (20 != 5 || 20 === 5)
+            }
+
+            const answerElement = document.getElementById(id);
+            answerElement.textContent = answer;
+            answerElement.style.display = 'block';
+        }
+    </script>
+
+    <br>
+
+    <h5 style="color: grey;">@2025 Gutierrez</h5>
+
+</body>
+</html>
